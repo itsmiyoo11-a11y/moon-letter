@@ -1,41 +1,17 @@
-const openButton = document.getElementById("openLetter");
+const button = document.getElementById("letterButton");
 const overlay = document.getElementById("overlay");
-const closeButton = document.getElementById("closeLetter");
+const close = document.getElementById("close");
 
-openButton.addEventListener("click", () => {
-
+button.addEventListener("click", () => {
     overlay.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
 });
 
-closeButton.addEventListener("click", closeLetter);
-
-overlay.addEventListener("click", function(e){
-
-    if(e.target === overlay){
-
-        closeLetter();
-
-    }
-
-});
-
-document.addEventListener("keydown", function(e){
-
-    if(e.key === "Escape"){
-
-        closeLetter();
-
-    }
-
-});
-
-function closeLetter(){
-
+close.addEventListener("click", () => {
     overlay.classList.remove("show");
+});
 
-    document.body.style.overflow = "auto";
-
-}
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.classList.remove("show");
+    }
+});
