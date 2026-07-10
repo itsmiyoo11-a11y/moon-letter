@@ -239,6 +239,23 @@ h1{
     scale(1.03);
 
 }
+.quote{
+
+    margin-top:26px;
+
+    max-width:430px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    text-align:center;
+
+    font-style:italic;
+
+}
 
 .flap{
 
