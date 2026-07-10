@@ -266,17 +266,21 @@ h1{
 
 }
 
-..tap{
+.tap{
 
-    color:white;
+    color:rgba(255,255,255,.72);
 
-    opacity:.65;
+    margin-top:22px;
 
-    margin-top:20px;
+    font-size:19px;
 
-    font-size:18px;
+    line-height:1.7;
 
     text-align:center;
+
+    max-width:420px;
+
+    font-style:italic;
 
 }
 
