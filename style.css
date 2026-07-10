@@ -383,25 +383,17 @@ h1{
 }
 
 .close{
-
     position:absolute;
-
     top:20px;
-
     right:22px;
-
     border:none;
-
     background:none;
-
     font-size:28px;
-
     color:#8b7d68;
-
     cursor:pointer;
-
     transition:.3s;
 
+    z-index:9999;
 }
 
 .close:hover{
