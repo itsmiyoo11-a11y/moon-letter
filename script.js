@@ -14,4 +14,4 @@ overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
         overlay.classList.remove("show");
     }
-});document.getElementById("overlay").classList.remove("show")
+});
