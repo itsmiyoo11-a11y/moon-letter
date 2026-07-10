@@ -1,0 +1,730 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    background:#04060d;
+
+    overflow:hidden;
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.18;
+
+    animation:twinkle 6s ease-in-out infinite;
+
+}
+
+/* ===========================
+   HOME
+=========================== */
+
+.home{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+}
+
+.content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    animation:fadeUp 1.5s ease;
+
+}
+
+/* ===========================
+   MOON
+=========================== */
+
+.moon{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at 30% 25%,
+
+    #ffffff 0%,
+
+    #f8f6f2 30%,
+
+    #ece7dd 65%,
+
+    #d8d1c5 100%);
+
+    box-shadow:
+
+    0 0 70px rgba(255,255,255,.45),
+
+    0 0 150px rgba(255,255,255,.18),
+
+    0 0 260px rgba(255,255,255,.08);
+
+    margin-bottom:60px;
+
+    animation:
+
+    float 7s ease-in-out infinite,
+
+    glow 5s ease-in-out infinite;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+.moon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    top:38px;
+
+    left:45px;
+
+    background:rgba(180,180,180,.10);
+
+    filter:blur(8px);
+
+}
+.moon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    bottom:48px;
+
+    right:40px;
+
+    background:rgba(150,150,150,.10);
+
+    filter:blur(6px);
+
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+h1{
+
+    color:white;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    font-weight:400;
+
+    margin-bottom:10px;
+
+    text-align:center;
+
+}
+
+.subtitle{
+
+    color:#d7d7d7;
+
+    font-size:30px;
+
+    margin-bottom:45px;
+
+    text-align:center;
+
+}
+/* ===========================
+   ENVELOPE
+=========================== */
+
+.envelope{
+
+    width:190px;
+
+    height:120px;
+
+    position:relative;
+
+    background:#eadfc9;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.35);
+    
+    margin:0 auto;
+
+}
+
+.envelope:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.03);
+
+}
+
+.flap{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#d8cab2;
+
+    clip-path:polygon(0 0,100% 0,50% 58%);
+
+}
+
+.icon{
+
+    position:absolute;
+
+    left:50%;
+
+    top:54%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:34px;
+
+}
+
+..tap{
+
+    color:white;
+
+    opacity:.65;
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   LETTER
+=========================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(4,6,13,.35);
+
+    backdrop-filter:blur(0px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.45s ease;
+
+    z-index:100;
+
+}
+
+.overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    backdrop-filter:blur(5px);
+
+}
+
+.paper{
+
+    position:relative;
+
+    width:min(92vw,720px);
+
+    max-height:88vh;
+
+    overflow-y:auto;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fffaf2,
+        #f4ead8
+    );
+
+    border-radius:8px;
+
+    padding:70px;
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.35),
+
+    0 0 70px rgba(255,255,255,.04);
+
+    transform:translateY(40px);
+
+    transition:.5s;
+
+    scroll-behavior:smooth;
+
+}
+
+.overlay.show .paper{
+
+    transform:translateY(0);
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:22px;
+
+    border:none;
+
+    background:none;
+
+    font-size:28px;
+
+    color:#8b7d68;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.close:hover{
+
+    transform:scale(1.15);
+
+    color:#3d342a;
+
+}
+
+.date{
+
+    display:block;
+
+    color:#8a806f;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+.paper h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:34px;
+line-height:1.15;
+
+    font-weight:400;
+
+    color:#56493b;
+
+    margin-bottom:40px;
+
+}
+
+.letter-content{
+
+    color:#30271f;
+
+    font-size:20px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+}
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+.paper::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.paper::-webkit-scrollbar-thumb{
+
+    background:#cabca3;
+
+    border-radius:20px;
+
+}
+
+.paper::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:
+
+        0 0 60px rgba(255,255,255,.35),
+
+        0 0 160px rgba(255,255,255,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 0 90px rgba(255,255,255,.55),
+
+        0 0 220px rgba(255,255,255,.18);
+
+    }
+
+    100%{
+
+        box-shadow:
+
+        0 0 60px rgba(255,255,255,.35),
+
+        0 0 160px rgba(255,255,255,.15);
+
+    }
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.12;
+
+    }
+
+    50%{
+
+        opacity:.28;
+
+    }
+
+    100%{
+
+        opacity:.12;
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    .home{
+
+        padding:25px;
+
+    }
+
+    .content{
+
+        width:100%;
+
+    }
+
+    .moon{
+
+        width:140px;
+
+        height:140px;
+
+        margin-bottom:30px;
+
+    }
+
+    h1{
+
+        font-size:44px;
+
+        text-align:center;
+
+    }
+
+    .subtitle{
+
+        font-size:20px;
+
+        text-align:center;
+
+        margin-bottom:28px;
+
+    }
+
+    .envelope{
+
+        width:150px;
+
+        height:95px;
+
+    }
+
+    .tap{
+
+        font-size:15px;
+
+        margin-top:14px;
+
+    }
+
+    .paper{
+
+        width:95vw;
+
+        height:92vh;
+
+        max-height:92vh;
+
+        padding:26px 22px;
+
+        border-radius:12px;
+
+    }
+
+    .date{
+
+        font-size:15px;
+
+        margin-bottom:18px;
+
+    }
+
+    .paper h2{
+
+        font-size:34px;
+
+        line-height:1.1;
+
+        margin-bottom:25px;
+
+    }
+
+    .letter-content{
+
+        font-size:19px;
+
+        line-height:2.05;
+
+    }
+
+    .close{
+
+        top:12px;
+
+        right:14px;
+
+        font-size:26px;
+
+    }
+
+}
+
+@media (max-width:430px){
+
+    .moon{
+
+        width:125px;
+
+        height:125px;
+
+        margin-bottom:25px;
+
+    }
+
+    h1{
+
+        font-size:38px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+        margin-bottom:22px;
+
+    }
+
+    .envelope{
+
+        width:140px;
+
+        height:90px;
+
+    }
+
+    .paper{
+
+        width:96vw;
+
+        height:94vh;
+
+        padding:22px 18px;
+
+    }
+
+    .paper h2{
+
+        font-size:30px;
+
+    }
+
+    .letter-content{
+
+        font-size:18px;
+
+        line-height:1.95;
+
+    }
+
+}
