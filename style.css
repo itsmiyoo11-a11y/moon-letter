@@ -388,11 +388,9 @@ h1{
 }
 
 .paper{
-
     position:relative;
 
-    width:min(92vw,720px);
-
+    width:min(60vw,400px);
     max-height:88vh;
 
     overflow-y:auto;
@@ -409,17 +407,13 @@ h1{
     padding:70px;
 
     box-shadow:
-
-    0 30px 80px rgba(0,0,0,.35),
-
-    0 0 70px rgba(255,255,255,.04);
+        0 30px 80px rgba(0,0,0,.35),
+        0 0 70px rgba(255,255,255,.04);
 
     transform:translateY(40px);
-
     transition:.5s;
 
     scroll-behavior:smooth;
-
 }
 
 .overlay.show .paper{
@@ -664,19 +658,13 @@ line-height:1.15;
 
     }
 
-    .paper{
-
-        width:95vw;
-
-        height:92vh;
-
-        max-height:92vh;
-
-        padding:26px 22px;
-
-        border-radius:12px;
-
-    }
+   .paper{
+    width:92vw;
+    height:auto;
+    max-height:88vh;
+    padding:55px 50px;
+    border-radius:8px;
+}
 
     .date{
 
@@ -750,15 +738,12 @@ line-height:1.15;
 
     }
 
-    .paper{
-
-        width:96vw;
-
-        height:94vh;
-
-        padding:22px 18px;
-
-    }
+  .paper{
+    width:94vw;
+    height:auto;
+    max-height:88vh;
+    padding:45px 32px;
+}
 
     .paper h2{
 
